@@ -4,6 +4,6 @@ Wine Adore Test Interview
 
 ## Todo List
 
-[!sourcecode](screenshot/homepage.png)
+ ![Source](screenshot/homepage.png)
 
 
