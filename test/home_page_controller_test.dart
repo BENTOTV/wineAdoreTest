@@ -31,23 +31,6 @@ void main() {
       expect(homePageController.doneTask, isEmpty);
     });
 
-    // test('onInit assigns tasks and sets up listener', () {
-    //   final taskList = [
-    //     Task(title: 'Test Task', icon: 1, color: 'red', tasks: [
-    //       {'title': 'Subtask 1', 'done': false}
-    //     ])
-    //   ];
-    //   when(mockRepositoryTask.readTasks()).thenReturn(taskList);
-
-    //   homePageController.onInit();
-
-    //   expect(homePageController.tasks, taskList);
-    //   verify(mockRepositoryTask.readTasks()).called(1);
-    //   homePageController.tasks
-    //       .add(Task(title: 'New Task', icon: 2, color: 'blue'));
-    //   verify(mockRepositoryTask.writeTasks(homePageController.tasks)).called(1);
-    // });
-
     test('changeChipIndex updates chipIndex', () {
       homePageController.changeChipIndex(1);
       expect(homePageController.chipIndex.value, 1);
@@ -126,16 +109,6 @@ void main() {
       expect(homePageController.tasks.first.tasks!.length, 1);
       expect(homePageController.tasks.first.tasks!.first['title'], 'New Todo');
     });
-
-    // test('updateTask does not add a duplicate todo', () {
-    //   final task = Task(title: 'Task', icon: 1, color: 'red', tasks: [
-    //     {'title': 'New Todo', 'done': false}
-    //   ]);
-    //   homePageController.tasks.add(task);
-    //   final result = homePageController.updateTask(task, 'New Todo');
-    //   expect(result, isFalse);
-    //   expect(homePageController.tasks.first.tasks!.length, 1);
-    // });
 
     test('addDetailTask returns false if task already exists', () {
       homePageController.doingTask.add({'title': 'New Task', 'done': false});
