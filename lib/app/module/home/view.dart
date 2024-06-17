@@ -7,7 +7,6 @@ import 'package:test_flutter/app/core/utils/extention.dart';
 import 'package:test_flutter/app/module/home/widgets/add_card.dart';
 import 'package:test_flutter/app/module/home/widgets/add_dialog.dart';
 import 'package:test_flutter/app/module/home/widgets/task_card.dart';
-import 'package:test_flutter/app/module/report/view.dart';
 
 class HomePage extends GetView<HomePageController> {
   const HomePage({super.key});
@@ -55,7 +54,6 @@ class HomePage extends GetView<HomePageController> {
                 )
               ],
             )),
-            ReportPage()
           ],
         ),
       ),
@@ -80,34 +78,6 @@ class HomePage extends GetView<HomePageController> {
           controller.tasks.remove(task);
           EasyLoading.showSuccess("Task Deleted");
         },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: Theme(
-        data: ThemeData(
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-        ),
-        child: Obx(
-          () => BottomNavigationBar(
-              onTap: (int index) => controller.changeTabIndex(index),
-              currentIndex: controller.tabIndex.value,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              items: [
-                BottomNavigationBarItem(
-                    label: "Home",
-                    icon: Padding(
-                      padding: EdgeInsets.only(right: 15.0.wp),
-                      child: Icon(Icons.apps),
-                    )),
-                BottomNavigationBarItem(
-                    label: "Home",
-                    icon: Padding(
-                      padding: EdgeInsets.only(left: 15.0.wp),
-                      child: Icon(Icons.data_usage),
-                    ))
-              ]),
-        ),
       ),
     );
   }
